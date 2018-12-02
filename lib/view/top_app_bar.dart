@@ -33,5 +33,6 @@ class TopAppBar extends AppBar {
           ),
           bottom: bottomView,
           backgroundColor: BAR_BACK_COLORS[group.index],
+          elevation: 0.0,
         );
 }

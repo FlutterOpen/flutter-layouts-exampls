@@ -23,11 +23,6 @@ class NBState extends State<NBMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//      appBar: TopAppBar(
-//        group: curGroup,
-//        itemType: ItemType.list,
-//        onClick: _changeGroup,
-//      ),
       body: _itemBody(curItemType),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -70,20 +65,6 @@ class NBState extends State<NBMain> {
     );
   }
 
-//  enum ItemType {
-//  row_column,
-//  baseline,
-//  stack,
-//  expanded,
-//  padding,
-//
-//  //The second items.
-//  page_view,
-//  list,
-//  sliver,
-//  hero,
-//  nested
-//  }
   Widget _itemBody(ItemType type) {
     switch (type) {
       case ItemType.row_column:
