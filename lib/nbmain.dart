@@ -1,88 +1,175 @@
-import 'package:flutter/material.dart';
-
 ///
 /// Created by NieBin on 18-12-1
 /// Github: https://github.com/nb312
 /// Email: niebin312@gmail.com
 ///
+///
+import 'package:flutter/material.dart';
+import './view/top_app_bar.dart';
+import './constant/string_const.dart';
+import "./screen/screen.dart";
 
 class NBMain extends StatefulWidget {
   @override
   NBState createState() => NBState();
 }
 
-const PAGE_ADD = 0;
-const PAGE_ALARM = 1;
-const CONTENTS = ["Add", "Alarm"];
+const ITEM_COUNT = 5;
 
 class NBState extends State<NBMain> {
-  var currentIndex = 0;
+  var curGroup = GroupType.simple;
+  var curItemType = ItemType.row_column;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          CONTENTS[currentIndex],
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
-      ),
-      body: _itemBody(currentIndex),
+//      appBar: TopAppBar(
+//        group: curGroup,
+//        itemType: ItemType.list,
+//        onClick: _changeGroup,
+//      ),
+      body: _itemBody(curItemType),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          _item(PAGE_ADD),
-          _item(PAGE_ALARM),
-        ],
+        type: BottomNavigationBarType.fixed,
+        items: _bottomItems(),
         onTap: _selectItem,
       ),
     );
   }
 
-  BottomNavigationBarItem _item(var index) {
+  List<BottomNavigationBarItem> _bottomItems() {
+    return curGroup == GroupType.simple
+        ? [
+            _bottomItem(ItemType.row_column),
+            _bottomItem(ItemType.baseline),
+            _bottomItem(ItemType.stack),
+            _bottomItem(ItemType.expanded),
+            _bottomItem(ItemType.padding)
+          ]
+        : [
+            _bottomItem(ItemType.page_view),
+            _bottomItem(ItemType.list),
+            _bottomItem(ItemType.sliver),
+            _bottomItem(ItemType.hero),
+            _bottomItem(ItemType.nested),
+          ];
+  }
+
+  BottomNavigationBarItem _bottomItem(ItemType type) {
     return BottomNavigationBarItem(
       icon: Icon(
-        _itemIcon(index),
-        color: _itemColor(index),
+        BOTTOM_ICONS[type.index],
+        color: _itemColor(type),
       ),
       title: Text(
-        _itemTitle(index),
+        BOTTOM_TITLES[type.index],
         style: TextStyle(
-          color: _itemColor(index),
+          color: _itemColor(type),
         ),
       ),
     );
   }
 
-  Widget _itemBody(var index) {
-    var arr = CONTENTS;
-    return Text(
-      arr[index],
-      style: TextStyle(
-        color: _itemColor(index),
-        fontSize: 30,
-      ),
-    );
+//  enum ItemType {
+//  row_column,
+//  baseline,
+//  stack,
+//  expanded,
+//  padding,
+//
+//  //The second items.
+//  page_view,
+//  list,
+//  sliver,
+//  hero,
+//  nested
+//  }
+  Widget _itemBody(ItemType type) {
+    switch (type) {
+      case ItemType.row_column:
+        return RowColumnScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.baseline:
+        return BaseLineScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.stack:
+        return StackScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.expanded:
+        return ExpandScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.padding:
+        return PaddingScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.page_view:
+        return PageViewScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.list:
+        return ListScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.sliver:
+        return SliverScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.hero:
+        return HeroScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      case ItemType.nested:
+        return NestedScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+      default:
+        return RowColumnScreen(
+          group: curGroup,
+          onClick: _changeGroup,
+        );
+    }
   }
 
-  IconData _itemIcon(var index) {
-    var arr = [Icons.add, Icons.alarm];
-    return arr[index % 2];
-  }
-
-  String _itemTitle(var index) {
-    var arr = CONTENTS;
-    return arr[index % 2];
-  }
-
-  Color _itemColor(index) {
-    return currentIndex == index ? Colors.blue : Colors.blueGrey;
+  Color _itemColor(type) {
+    return curItemType == type
+        ? BAR_BACK_COLORS[curGroup.index]
+        : Colors.blueGrey;
   }
 
   void _selectItem(index) {
     setState(() {
-      currentIndex = index;
+      var cur = curGroup == GroupType.simple ? index : index + ITEM_COUNT;
+      curItemType = convertItemType(cur);
+    });
+  }
+
+  void _changeGroup() {
+    setState(() {
+      if (curGroup == GroupType.simple) {
+        curGroup = GroupType.scroll;
+        if (curItemType.index < ITEM_COUNT) {
+          curItemType = convertItemType(curItemType.index + ITEM_COUNT);
+        }
+      } else {
+        curGroup = GroupType.simple;
+        if (curItemType.index >= ITEM_COUNT) {
+          curItemType = convertItemType(curItemType.index - ITEM_COUNT);
+        }
+      }
     });
   }
 }
