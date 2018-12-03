@@ -68,67 +68,32 @@ class NBState extends State<NBMain> {
   Widget _itemBody(ItemType type) {
     switch (type) {
       case ItemType.row_column:
-        return RowColumnScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return RowColumnScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.baseline:
-        return BaseLineScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return BaseLineScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.stack:
-        return StackScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return StackScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.expanded:
-        return ExpandScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return ExpandScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.padding:
-        return PaddingScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return PaddingScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.page_view:
-        return PageViewScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return PageViewScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.list:
-        return ListScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return ListScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.sliver:
-        return SliverScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return SliverScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.hero:
-        return HeroScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return HeroScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.nested:
-        return NestedScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return NestedScreen(group: curGroup, onClick: _changeGroup);
       default:
-        return RowColumnScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return RowColumnScreen(group: curGroup, onClick: _changeGroup);
     }
   }
 
   Color _itemColor(type) {
-    return curItemType == type
-        ? BAR_BACK_COLORS[curGroup.index]
-        : Colors.grey;
+    return curItemType == type ? BAR_BACK_COLORS[curGroup.index] : Colors.grey;
   }
 
   void _selectItem(index) {
