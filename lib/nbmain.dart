@@ -128,7 +128,7 @@ class NBState extends State<NBMain> {
   Color _itemColor(type) {
     return curItemType == type
         ? BAR_BACK_COLORS[curGroup.index]
-        : Colors.blueGrey;
+        : Colors.grey;
   }
 
   void _selectItem(index) {

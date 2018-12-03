@@ -68,61 +68,48 @@ class _RowColumnState extends State<RowColumnSelector> {
   }
 
   void _changeMainSize(pos) {
+    print("pos:$pos");
     MainAxisSize size = MainAxisSize.min;
-    switch (pos) {
-      case SizeType.min:
-        size = MainAxisSize.min;
-        break;
-      case SizeType.max:
-        size = MainAxisSize.max;
-        break;
+    if (pos == SizeType.min.index) {
+      size = MainAxisSize.min;
+    } else {
+      size = MainAxisSize.max;
     }
     widget.clickMainSize(size);
   }
 
-  void _changeMainAlign(pos) {
+  void _changeMainAlign(int pos) {
     var align = MainAxisAlignment.start;
-    switch (pos) {
-      case MainAlignType.start:
-        align = MainAxisAlignment.start;
-        break;
-      case MainAlignType.end:
-        align = MainAxisAlignment.end;
-        break;
-      case MainAlignType.center:
-        align = MainAxisAlignment.center;
-        break;
-      case MainAlignType.space_between:
-        align = MainAxisAlignment.spaceBetween;
-        break;
-      case MainAlignType.space_evenly:
-        align = MainAxisAlignment.spaceEvenly;
-        break;
-      default:
-        align = MainAxisAlignment.start;
-        break;
+    if (pos == MainAlignType.start.index) {
+      align = MainAxisAlignment.start;
+    } else if (pos == MainAlignType.end.index) {
+      align = MainAxisAlignment.end;
+    } else if (pos == MainAlignType.center.index) {
+      align = MainAxisAlignment.center;
+    } else if (pos == MainAlignType.space_between.index) {
+      align = MainAxisAlignment.spaceBetween;
+    } else if (pos == MainAlignType.space_evenly.index) {
+      align = MainAxisAlignment.spaceEvenly;
+    } else if(pos==MainAlignType.space_around.index){
+      align = MainAxisAlignment.spaceAround;
+    }else {
+      align = MainAxisAlignment.start;
     }
     widget.clickMainAlign(align);
   }
 
-  void _changeCrossAlign(pos) {
+  void _changeCrossAlign(int pos) {
     var align = CrossAxisAlignment.start;
-    switch (pos) {
-      case CrossAlignType.start:
-        align = CrossAxisAlignment.start;
-        break;
-      case CrossAlignType.end:
-        align = CrossAxisAlignment.end;
-        break;
-      case CrossAlignType.center:
-        align = CrossAxisAlignment.center;
-        break;
-      case CrossAlignType.stretch:
-        align = CrossAxisAlignment.stretch;
-        break;
-      default:
-        align = CrossAxisAlignment.start;
-        break;
+    if (pos == CrossAlignType.start.index) {
+      align = CrossAxisAlignment.start;
+    } else if (pos == CrossAlignType.end.index) {
+      align = CrossAxisAlignment.end;
+    } else if (pos == CrossAlignType.center.index) {
+      align = CrossAxisAlignment.center;
+    } else if (pos == CrossAlignType.stretch.index) {
+      align = CrossAxisAlignment.stretch;
+    } else {
+      align = CrossAxisAlignment.start;
     }
     widget.clickCrossAlign(align);
   }

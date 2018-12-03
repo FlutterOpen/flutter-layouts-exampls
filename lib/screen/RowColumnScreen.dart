@@ -19,13 +19,67 @@ class RowColumnScreen extends StatefulWidget {
 }
 
 class _RowColumnState extends State<RowColumnScreen> {
-  void _changeLayout(LayType type) {}
+  LayType _layType = LayType.row;
+  MainAxisSize _size = MainAxisSize.min;
+  MainAxisAlignment _mainAlign = MainAxisAlignment.start;
+  CrossAxisAlignment _crossAlign = CrossAxisAlignment.start;
 
-  void _changeMainSize(MainAxisSize size) {}
+  void _changeLayout(LayType type) {
+    setState(() {
+      _layType = type;
+    });
+  }
 
-  void _changeMainAlign(MainAxisAlignment align) {}
+  void _changeMainSize(MainAxisSize size) {
+    setState(() {
+      _size = size;
+    });
+  }
 
-  void _changeCrossAlign(CrossAxisAlignment align) {}
+  void _changeMainAlign(MainAxisAlignment align) {
+    setState(() {
+      _mainAlign = align;
+    });
+  }
+
+  void _changeCrossAlign(CrossAxisAlignment align) {
+    setState(() {
+      _crossAlign = align;
+    });
+  }
+
+  Widget _body() {
+    List<Widget> children = [
+      Icon(
+        Icons.add_a_photo,
+        size: 50,
+        color: BAR_BACK_COLORS[widget.group.index],
+      ),
+      Icon(
+        Icons.add_a_photo,
+        size: 100,
+        color: BAR_BACK_COLORS[widget.group.index],
+      ),
+      Icon(
+        Icons.add_a_photo,
+        size: 50,
+        color: BAR_BACK_COLORS[widget.group.index],
+      )
+    ];
+    return _layType == LayType.column
+        ? Column(
+            mainAxisSize: _size,
+            mainAxisAlignment: _mainAlign,
+            crossAxisAlignment: _crossAlign,
+            children: children,
+          )
+        : Row(
+            mainAxisSize: _size,
+            mainAxisAlignment: _mainAlign,
+            crossAxisAlignment: _crossAlign,
+            children: children,
+          );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +89,7 @@ class _RowColumnState extends State<RowColumnScreen> {
           itemType: ItemType.row_column,
           onClick: widget.onClick,
           bottomView: PreferredSize(
-            preferredSize: Size(0.0, 160.0),
+            preferredSize: Size(0.0, 150.0),
             child: RowColumnSelector(
               clickLayout: _changeLayout,
               clickMainSize: _changeMainSize,
@@ -44,8 +98,9 @@ class _RowColumnState extends State<RowColumnScreen> {
               mainColor: Colors.white,
             ),
           )),
-      body: Text(
-        BOTTOM_TITLES[ItemType.row_column.index],
+      body: Container(
+        color: Colors.black26,
+        child: _body(),
       ),
     );
   }

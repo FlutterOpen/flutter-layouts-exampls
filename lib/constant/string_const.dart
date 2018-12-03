@@ -40,7 +40,7 @@ const BAR_ICONS = [
 ];
 const BAR_BACK_COLORS = [
   Colors.deepOrange,
-  Colors.lightGreen,
+  Colors.green,
 ];
 
 enum GroupType {
