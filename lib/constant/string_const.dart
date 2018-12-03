@@ -39,8 +39,8 @@ const BAR_ICONS = [
   Icons.filter_2,
 ];
 const BAR_BACK_COLORS = [
-  Colors.deepOrange,
   Colors.green,
+  Colors.blueAccent,
 ];
 
 enum GroupType {
