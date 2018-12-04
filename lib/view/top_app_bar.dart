@@ -5,7 +5,7 @@
 ///
 
 import "package:flutter/material.dart";
-import '../constant/string_const.dart';
+import '../constant/main_const.dart';
 
 const BAR_FONT_SIZE = 21.0;
 const BAR_TITLE_COLOR = Colors.white;

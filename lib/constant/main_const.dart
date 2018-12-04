@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 
 const BOTTOM_TITLES = [
   "Row / Col",
-  'Baseline',
+  'CrossAlign',
   'Stack',
   'Expanded',
   'Padding',
@@ -50,7 +50,7 @@ enum GroupType {
 
 enum ItemType {
   row_column,
-  baseline,
+  cross_align,
   stack,
   expanded,
   padding,
@@ -68,7 +68,7 @@ ItemType convertItemType(index) {
     case 0:
       return ItemType.row_column;
     case 1:
-      return ItemType.baseline;
+      return ItemType.cross_align;
     case 2:
       return ItemType.stack;
     case 3:

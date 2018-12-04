@@ -6,7 +6,7 @@
 ///
 import 'package:flutter/material.dart';
 import './view/top_app_bar.dart';
-import './constant/string_const.dart';
+import './constant/main_const.dart';
 import "./screen/screen.dart";
 
 class NBMain extends StatefulWidget {
@@ -36,7 +36,7 @@ class NBState extends State<NBMain> {
     return curGroup == GroupType.simple
         ? [
             _bottomItem(ItemType.row_column),
-            _bottomItem(ItemType.baseline),
+            _bottomItem(ItemType.cross_align),
             _bottomItem(ItemType.stack),
             _bottomItem(ItemType.expanded),
             _bottomItem(ItemType.padding)
@@ -69,8 +69,8 @@ class NBState extends State<NBMain> {
     switch (type) {
       case ItemType.row_column:
         return RowColumnScreen(group: curGroup, onClick: _changeGroup);
-      case ItemType.baseline:
-        return BaseLineScreen(group: curGroup, onClick: _changeGroup);
+      case ItemType.cross_align:
+        return CrossAlignScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.stack:
         return StackScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.expanded:

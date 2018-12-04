@@ -4,9 +4,9 @@
 /// Email: niebin312@gmail.com
 ///
 
-const TEXT_LARGE_SIZE = 20.0;
+const TEXT_LARGE_SIZE = 24.0;
 const TEXT_NORMAL_SIZE = 16.0;
 const TEXT_SMALL_SIZE = 10.0;
 
-const line_small = 1.0;
-const line_normal = 10.0;
+const LINE_SMALL = 1.0;
+const LINE_NORMAL = 10.0;

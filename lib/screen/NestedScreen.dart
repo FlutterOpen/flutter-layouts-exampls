@@ -5,7 +5,7 @@
 ///
 import "package:flutter/material.dart";
 import '../view/top_app_bar.dart';
-import '../constant/string_const.dart';
+import '../constant/main_const.dart';
 
 class NestedScreen extends StatefulWidget {
   NestedScreen({Key key, this.group, this.onClick}) : super(key: key);
