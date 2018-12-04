@@ -8,6 +8,7 @@ So far,I already fufil  the bottom items and row_colume,cross align page.
 ## CrossAxisAlignment
 > Show the describation of the CrossAxisAlignment
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/cross_align.jpg" width="320">
+
 ## MyAccount   
 [nb312](https://github.com/nb312)
 
