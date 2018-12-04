@@ -48,7 +48,7 @@ class _StackState extends State<StackSelector> {
     var align = AlignmentDirectional.topStart;
     switch (pos) {
       case 0:
-        align = AlignmentDirectional.topCenter;
+        align = AlignmentDirectional.topStart;
         break;
       case 1:
         align = AlignmentDirectional.topCenter;
