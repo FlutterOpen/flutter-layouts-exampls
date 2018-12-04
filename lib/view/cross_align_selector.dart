@@ -6,19 +6,6 @@
 import "package:flutter/material.dart";
 import 'view_selector.dart';
 
-//switch (
-//index) {
-//case 0:
-//return CrossAxisAlignment.baseline;
-//case 1:
-//return CrossAxisAlignment.start;
-//case 2:
-//return CrossAxisAlignment.end;
-//case 3:
-//return CrossAxisAlignment.center;
-//case 4:
-//return CrossAxisAlignment.stretch;
-//}
 
 const BASELINE_TITLE = "cross axis align";
 const BASELINE_VALUES = ["baseline", "start", "end", "center", "stretch"];
