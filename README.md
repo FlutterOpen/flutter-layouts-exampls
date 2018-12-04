@@ -4,6 +4,7 @@ So far,complete as following:
 - [CrossAxisAlignment](#crossaxisalignment)
 - [Stack](#stack)
 - [Expanded](#expanded)
+- [Padding](#padding)
 
 ## RowColumn 
 > You can learn the layout of Row and Column.
@@ -18,6 +19,9 @@ So far,complete as following:
 
 ## Expanded 
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/expand_screen.png" width="320">
+
+## Padding 
+<img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/padding_screen.png" width="320">
 
 ## MyAccount   
 [nb312](https://github.com/nb312)
