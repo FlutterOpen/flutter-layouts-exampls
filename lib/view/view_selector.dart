@@ -51,7 +51,7 @@ class _ViewSelectorState extends State<ViewSelector> {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Divider(color: widget.mainColor),

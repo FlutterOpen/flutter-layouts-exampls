@@ -6,7 +6,6 @@
 import "package:flutter/material.dart";
 import 'view_selector.dart';
 
-
 const BASELINE_TITLE = "cross axis align";
 const BASELINE_VALUES = ["baseline", "start", "end", "center", "stretch"];
 
@@ -50,16 +49,18 @@ class _CrossAlignState extends State<CrossAlignSelector> {
   Widget build(BuildContext context) {
     return Container(
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          ViewSelector(
-            title: BASELINE_TITLE,
-            values: BASELINE_VALUES,
-            mainColor: widget.mainColor,
-            onClick: _alignClick,
-          ),
+          Expanded(
+            child: ViewSelector(
+              title: BASELINE_TITLE,
+              values: BASELINE_VALUES,
+              mainColor: widget.mainColor,
+              onClick: _alignClick,
+            ),
+          )
         ],
       ),
     );
