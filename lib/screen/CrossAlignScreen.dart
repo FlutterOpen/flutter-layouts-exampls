@@ -49,6 +49,21 @@ class _CrossAlignState extends State<CrossAlignScreen> {
     return contents;
   }
 
+  Container _bodyItem(List<String> values) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10.0),
+      height: 100.0,
+      color: Colors.grey,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: _alignment,
+        textBaseline: TextBaseline.alphabetic,
+        children: _contents(values),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,30 +88,8 @@ class _CrossAlignState extends State<CrossAlignScreen> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0),
-                height: 100.0,
-                color: Colors.grey,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: _alignment,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: _contents(CONTENT_VALUES_1),
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0),
-                height: 100.0,
-                color: Colors.grey,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: _alignment,
-                  textBaseline: TextBaseline.alphabetic,
-                  children: _contents(CONTENT_VALUES_2),
-                ),
-              )
+              _bodyItem(CONTENT_VALUES_1),
+              _bodyItem(CONTENT_VALUES_2),
             ],
           ),
         ));
