@@ -67,9 +67,9 @@ class ExpandedPage extends StatelessWidget implements HasLayoutGroup {
     return _centeredLayout(
       child: Column(
         children: [
-          _buildBox(points: 8, color: Colors.red),
+          _buildBox(points: 2, color: Colors.red),
           Expanded(
-            flex: 5,
+            flex: 2,
             child: Row(
               children: [
                 _buildBox(points: 5, color: Colors.indigo),

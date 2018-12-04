@@ -5,7 +5,8 @@
 ///
 ///
 import 'package:flutter/material.dart';
-import './constant/string_const.dart';
+import './view/top_app_bar.dart';
+import './constant/main_const.dart';
 import "./screen/screen.dart";
 
 class NBMain extends StatefulWidget {
@@ -35,7 +36,7 @@ class NBState extends State<NBMain> {
     return curGroup == GroupType.simple
         ? [
             _bottomItem(ItemType.row_column),
-            _bottomItem(ItemType.baseline),
+            _bottomItem(ItemType.cross_align),
             _bottomItem(ItemType.stack),
             _bottomItem(ItemType.expanded),
             _bottomItem(ItemType.padding)
@@ -67,67 +68,32 @@ class NBState extends State<NBMain> {
   Widget _itemBody(ItemType type) {
     switch (type) {
       case ItemType.row_column:
-        return RowColumnScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
-      case ItemType.baseline:
-        return BaseLineScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return RowColumnScreen(group: curGroup, onClick: _changeGroup);
+      case ItemType.cross_align:
+        return CrossAlignScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.stack:
-        return StackScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return StackScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.expanded:
-        return ExpandScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return ExpandScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.padding:
-        return PaddingScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return PaddingScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.page_view:
-        return PageViewScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return PageViewScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.list:
-        return ListScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return ListScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.sliver:
-        return SliverScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return SliverScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.hero:
-        return HeroScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return HeroScreen(group: curGroup, onClick: _changeGroup);
       case ItemType.nested:
-        return NestedScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return NestedScreen(group: curGroup, onClick: _changeGroup);
       default:
-        return RowColumnScreen(
-          group: curGroup,
-          onClick: _changeGroup,
-        );
+        return RowColumnScreen(group: curGroup, onClick: _changeGroup);
     }
   }
 
   Color _itemColor(type) {
-    return curItemType == type
-        ? BAR_BACK_COLORS[curGroup.index]
-        : Colors.blueGrey;
+    return curItemType == type ? BAR_BACK_COLORS[curGroup.index] : Colors.grey;
   }
 
   void _selectItem(index) {

@@ -3,12 +3,12 @@
 /// Github: https://github.com/nb312
 /// Email: niebin312@gmail.com
 ///
-///
+
 import 'package:flutter/material.dart';
 
 const BOTTOM_TITLES = [
   "Row / Col",
-  'Baseline',
+  'CrossAlign',
   'Stack',
   'Expanded',
   'Padding',
@@ -39,8 +39,8 @@ const BAR_ICONS = [
   Icons.filter_2,
 ];
 const BAR_BACK_COLORS = [
-  Colors.deepOrange,
-  Colors.lightGreen,
+  Colors.green,
+  Colors.blueAccent,
 ];
 
 enum GroupType {
@@ -50,7 +50,7 @@ enum GroupType {
 
 enum ItemType {
   row_column,
-  baseline,
+  cross_align,
   stack,
   expanded,
   padding,
@@ -68,7 +68,7 @@ ItemType convertItemType(index) {
     case 0:
       return ItemType.row_column;
     case 1:
-      return ItemType.baseline;
+      return ItemType.cross_align;
     case 2:
       return ItemType.stack;
     case 3:
