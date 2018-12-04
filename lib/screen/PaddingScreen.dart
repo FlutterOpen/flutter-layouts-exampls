@@ -6,6 +6,9 @@
 import "package:flutter/material.dart";
 import '../view/top_app_bar.dart';
 import '../constant/main_const.dart';
+import '../view/padding_selector.dart';
+
+const _PADDING_TIMES = 5.0;
 
 class PaddingScreen extends StatefulWidget {
   PaddingScreen({Key key, this.group, this.onClick}) : super(key: key);
@@ -17,6 +20,36 @@ class PaddingScreen extends StatefulWidget {
 }
 
 class _PaddingState extends State<PaddingScreen> {
+  double paddingLeft = 0.0;
+  double paddingRight = 0.0;
+  double paddingTop = 0.0;
+  double paddingBottom = 0.0;
+
+  void _clickLeft(int pos) {
+    setState(() {
+      print("$pos");
+      paddingLeft = _PADDING_TIMES * pos;
+    });
+  }
+
+  void _clickRight(int pos) {
+    setState(() {
+      paddingRight = _PADDING_TIMES * pos;
+    });
+  }
+
+  void _clickTop(int pos) {
+    setState(() {
+      paddingTop = _PADDING_TIMES * pos;
+    });
+  }
+
+  void _clickBottom(int pos) {
+    setState(() {
+      paddingBottom = _PADDING_TIMES * pos;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +57,30 @@ class _PaddingState extends State<PaddingScreen> {
         group: widget.group,
         itemType: ItemType.padding,
         onClick: widget.onClick,
-        bottomView: null,
+        bottomView: PreferredSize(
+            child: PaddingSelector(
+              clickLeft: _clickLeft,
+              clickRight: _clickRight,
+              clickTop: _clickTop,
+              clickBottom: _clickBottom,
+              mainColor: Colors.white,
+            ),
+            preferredSize: Size(0.0, 150.0)),
       ),
-      body: Text(
-        BOTTOM_TITLES[ItemType.padding.index],
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        color: Colors.deepPurple,
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(
+            paddingLeft,
+            paddingTop,
+            paddingRight,
+            paddingBottom,
+          ),
+          child: Container(
+            color: Colors.yellowAccent,
+          ),
+        ),
       ),
     );
   }
