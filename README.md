@@ -1,5 +1,5 @@
 ## Just for learn
-From now on,I already fufil  the bottom items and row_colume,cross align page.
+So far,I already fufil  the bottom items and row_colume,cross align page.
 
 ## Row&Column 
 > You can learn the layout of Row and Column.
