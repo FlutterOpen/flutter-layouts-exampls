@@ -1,5 +1,5 @@
-name: layout_demo_flutter
-description: A new Flutter project.
+name: flutter_layout
+description: A Flutter layout project.
 
 dependencies:
   flutter:
