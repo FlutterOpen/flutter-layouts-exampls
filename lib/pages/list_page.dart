@@ -4,6 +4,7 @@ import 'package:layout_demo_flutter/pages/main_app_bar.dart';
 
 class Contact {
   Contact({this.name, this.email});
+
   final String name;
   final String email;
 }
@@ -22,6 +23,7 @@ class ListPage extends StatelessWidget implements HasLayoutGroup {
         onLayoutToggle: onLayoutToggle,
       ),
       body: Container(
+        constraints: BoxConstraints.tight(Size.fromHeight(100.0)),
         child: _buildContent(),
       ),
     );
@@ -29,10 +31,19 @@ class ListPage extends StatelessWidget implements HasLayoutGroup {
 
   Widget _buildContent() {
     return ListView.builder(
+        scrollDirection: Axis.horizontal,
         itemCount: allContacts.length,
         itemBuilder: (BuildContext content, int index) {
           Contact contact = allContacts[index];
-          return ContactListTile(contact);
+//          return ContactListTile(contact);
+          return Container(
+            margin: EdgeInsets.symmetric(vertical: 10),
+            color: Colors.redAccent,
+            constraints: BoxConstraints.tight(
+              Size(260.0, 60.0),
+            ),
+            child: ContactListTile(contact),
+          );
         });
   }
 }
@@ -40,10 +51,10 @@ class ListPage extends StatelessWidget implements HasLayoutGroup {
 class ContactListTile extends ListTile {
   ContactListTile(Contact contact)
       : super(
-    title: Text(contact.name),
-    subtitle: Text(contact.email),
-    leading: CircleAvatar(child: Text(contact.name[0])),
-  );
+          title: Text(contact.name),
+          subtitle: Text(contact.email),
+          leading: CircleAvatar(child: Text(contact.name[0])),
+        );
 }
 
 List<Contact> allContacts = [
