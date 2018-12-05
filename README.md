@@ -28,7 +28,7 @@ So far,complete as following:
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/page_view_screen.png" width="320">
 
 ## ListView
-> Support scrolling with Vertical and Horizontal. 
+> Support scrolling with Vertical and Horizontal.   
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/list_screen_1.png" width="320">   <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/list_screen_2.png" width="320">
 
 ## MyAccount   
