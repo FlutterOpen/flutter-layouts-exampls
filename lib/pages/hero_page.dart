@@ -22,7 +22,7 @@ class HeroHeader implements SliverPersistentHeaderDelegate {
       fit: StackFit.expand,
       children: [
         Image.asset(
-          'assets/ronnie-mayo-361348-unsplash.jpg',
+          'assets/pic_01.jpg',
           fit: BoxFit.cover,
         ),
         Container(
@@ -79,14 +79,14 @@ class HeroPage extends StatelessWidget implements HasLayoutGroup {
   final VoidCallback onLayoutToggle;
 
   final List<String> assetNames = [
-    'assets/brady-bellini-212790-unsplash.jpg',
-    'assets/stefan-stefancik-105587-unsplash.jpg',
-    'assets/simon-fitall-530083-unsplash.jpg',
-    'assets/anton-repponen-99530-unsplash.jpg',
-    'assets/kevin-cochran-524957-unsplash.jpg',
-    'assets/samsommer-72299-unsplash.jpg',
-    'assets/simon-matzinger-320332-unsplash.jpg',
-    'assets/meng-ji-102492-unsplash.jpg',
+    'assets/pic_08.jpg',
+    'assets/pic_05.jpg',
+    'assets/pic_03.jpg',
+    'assets/pic_09.jpg',
+    'assets/pic_07.jpg',
+    'assets/pic_02.jpg',
+    'assets/pic_04.jpg',
+    'assets/pic_06.jpg',
   ];
 
   @override
