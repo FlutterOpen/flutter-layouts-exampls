@@ -80,7 +80,7 @@ class _CrossAlignState extends State<CrossAlignScreen> {
                 });
               },
             ),
-            preferredSize: Size(0.0, 80.0),
+            preferredSize: Size(0.0, SELECTOR_ONE_HEIGHT),
           ),
         ),
         body: Container(

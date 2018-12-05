@@ -71,7 +71,7 @@ class _PageViewState extends State<PageViewScreen> {
               mainColor: Colors.white,
               clickDirection: _clickDirection,
             ),
-            preferredSize: Size(0.0, 80)),
+            preferredSize: Size(0.0, SELECTOR_ONE_HEIGHT)),
       ),
       body: Container(
         constraints: BoxConstraints.expand(),

@@ -8,7 +8,7 @@ import "package:flutter/material.dart";
 import '../view/top_app_bar.dart';
 import '../constant/main_const.dart';
 import '../view/row_column_selector.dart' show RowColumnSelector, LayType;
-
+import '../constant/size_const.dart';
 class RowColumnScreen extends StatefulWidget {
   RowColumnScreen({Key key, this.group, this.onClick}) : super(key: key);
   final VoidCallback onClick;
@@ -89,7 +89,7 @@ class _RowColumnState extends State<RowColumnScreen> {
           itemType: ItemType.row_column,
           onClick: widget.onClick,
           bottomView: PreferredSize(
-            preferredSize: Size(0.0, 150.0),
+            preferredSize: Size(0.0, SELECTOR_TWO_HEIGHT),
             child: RowColumnSelector(
               clickLayout: _changeLayout,
               clickMainSize: _changeMainSize,

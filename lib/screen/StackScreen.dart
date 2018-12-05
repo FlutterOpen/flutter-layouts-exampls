@@ -7,7 +7,7 @@ import "package:flutter/material.dart";
 import '../view/top_app_bar.dart';
 import '../constant/main_const.dart';
 import '../view/stack_selector.dart';
-
+import '../constant/size_const.dart';
 const _BOX_COLORS = [
   Colors.deepPurple,
   Colors.cyan,
@@ -135,7 +135,7 @@ class _StackState extends State<StackScreen> {
               });
             },
           ),
-          preferredSize: Size(0.0, 80.0),
+          preferredSize: Size(0.0, SELECTOR_ONE_HEIGHT),
         ),
       ),
       body: Container(

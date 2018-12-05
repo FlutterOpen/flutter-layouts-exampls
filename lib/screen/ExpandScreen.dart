@@ -99,7 +99,7 @@ class _ExpandState extends State<ExpandScreen> {
               clickOne: _clickOne,
               clickTwo: _clickTwo,
             ),
-            preferredSize: Size(0.0, 150)),
+            preferredSize: Size(0.0, SELECTOR_TWO_HEIGHT)),
       ),
       body: Container(
         constraints: BoxConstraints.expand(),

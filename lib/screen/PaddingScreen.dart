@@ -7,7 +7,7 @@ import "package:flutter/material.dart";
 import '../view/top_app_bar.dart';
 import '../constant/main_const.dart';
 import '../view/padding_selector.dart';
-
+import '../constant/size_const.dart';
 const _PADDING_TIMES = 5.0;
 
 class PaddingScreen extends StatefulWidget {
@@ -65,7 +65,7 @@ class _PaddingState extends State<PaddingScreen> {
               clickBottom: _clickBottom,
               mainColor: Colors.white,
             ),
-            preferredSize: Size(0.0, 150.0)),
+            preferredSize: Size(0.0, SELECTOR_TWO_HEIGHT)),
       ),
       body: Container(
         constraints: BoxConstraints.expand(),

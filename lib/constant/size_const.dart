@@ -11,3 +11,6 @@ const TEXT_SMALL_SIZE = 10.0;
 
 const LINE_SMALL = 1.0;
 const LINE_NORMAL = 10.0;
+
+const SELECTOR_ONE_HEIGHT = 80.0;
+const SELECTOR_TWO_HEIGHT = 150.0;
