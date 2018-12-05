@@ -1,5 +1,5 @@
 ## Just for learn
-So far,complete as following:
+This Demo contains contents as follow:
 - [Row&Column ](#rowcolumn)  
 - [CrossAxisAlignment](#crossaxisalignment)
 - [Stack](#stack)
