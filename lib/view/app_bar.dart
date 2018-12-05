@@ -36,3 +36,34 @@ class TopAppBar extends AppBar {
           elevation: 0.0,
         );
 }
+
+class SliverBar extends SliverAppBar {
+  SliverBar({
+    GroupType group,
+    ItemType itemType,
+    PreferredSize bottomView,
+    VoidCallback onClick,
+  }) : super(
+          pinned: true,
+          expandedHeight: 150.0,
+          flexibleSpace: FlexibleSpaceBar(
+            collapseMode: CollapseMode.none,
+            title: Text(
+              BOTTOM_TITLES[itemType.index],
+              style: TextStyle(
+                color: BAR_TITLE_COLOR,
+                fontSize: BAR_FONT_SIZE,
+              ),
+            ),
+          ),
+          leading: IconButton(
+            icon: Icon(
+              BAR_ICONS[group.index],
+              color: BAR_TITLE_COLOR,
+            ),
+            onPressed: onClick,
+          ),
+          bottom: bottomView,
+          backgroundColor: BAR_BACK_COLORS[group.index],
+        );
+}
