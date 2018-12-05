@@ -23,6 +23,10 @@ So far,complete as following:
 ## Padding 
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/padding_screen.png" width="320">
 
+
+## Padding 
+<img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/page_view_screen.png" width="320">
+
 ## MyAccount   
 [nb312](https://github.com/nb312)
 
