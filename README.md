@@ -6,8 +6,8 @@ So far,complete as following:
 - [Expanded](#expanded)
 - [Padding](#padding)  
 - [Page view](#pageview)
-- [List view](#listview)
-- [Slivers](#sliver)
+- [ListView](#listview)
+- [Slivers&CustomScrollView](#sliver)
 - [Nested ListView](#nestlistview)
 ## RowColumn 
 > You can learn the layout of Row and Column.
