@@ -7,8 +7,8 @@ This Demo contains contents as follow:
 - [Padding](#padding)  
 - [Page view](#pageview)
 - [ListView](#listview)
-- [Slivers&CustomScrollView](#sliver)
--[SliverPersistentHeader](#sliverpersistentheader)
+- [Slivers&CustomScrollView](#sliver)  
+- [SliverPersistentHeader](#sliverpersistentheader)
 - [Nested ListView](#nestlistview)
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/flutter_layout.gif" width="320">  
 
