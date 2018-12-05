@@ -27,12 +27,26 @@ class PageViewScreen extends StatefulWidget {
 }
 
 class _PageViewState extends State<PageViewScreen> {
+  PageController _controller;
+
+  @override
+  void initState() {
+    _controller = PageController(
+      initialPage: 0,
+    );
+    super.initState();
+  }
+
   var direction = Axis.horizontal;
 
   void _clickDirection(Axis direction) {
     setState(() {
       this.direction = direction;
     });
+  }
+
+  void _changePage(int page) {
+    _controller.jumpToPage(page);
   }
 
   Widget _childView(int pos) {
@@ -53,7 +67,13 @@ class _PageViewState extends State<PageViewScreen> {
     for (int i = 0; i < PAGE_CONTENTS.length; i++) {
       list.add(_childView(i));
     }
+    if (_controller == null) {
+      _controller = PageController(
+        initialPage: 0,
+      );
+    }
     return PageView(
+      controller: _controller,
       scrollDirection: direction,
       children: list,
     );
@@ -70,6 +90,7 @@ class _PageViewState extends State<PageViewScreen> {
             child: PageSelector(
               mainColor: Colors.white,
               clickDirection: _clickDirection,
+              clickPage: _changePage,
             ),
             preferredSize: Size(0.0, SELECTOR_ONE_HEIGHT)),
       ),
