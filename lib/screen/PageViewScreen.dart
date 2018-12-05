@@ -6,6 +6,16 @@
 import "package:flutter/material.dart";
 import '../view/top_app_bar.dart';
 import '../constant/main_const.dart';
+import '../view/page_selector.dart';
+import '../constant/size_const.dart';
+
+const PAGE_CONTENTS = ["One Page", "Two Page", "Three Page", "Four Page"];
+const PAGE_COLORS = [
+  Colors.red,
+  Colors.black38,
+  Colors.deepPurple,
+  Colors.brown
+];
 
 class PageViewScreen extends StatefulWidget {
   PageViewScreen({Key key, this.group, this.onClick}) : super(key: key);
@@ -17,6 +27,38 @@ class PageViewScreen extends StatefulWidget {
 }
 
 class _PageViewState extends State<PageViewScreen> {
+  var direction = Axis.horizontal;
+
+  void _clickDirection(Axis direction) {
+    setState(() {
+      this.direction = direction;
+    });
+  }
+
+  Widget _childView(int pos) {
+    return Container(
+      color: PAGE_COLORS[pos],
+      margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+      constraints: BoxConstraints.expand(),
+      alignment: AlignmentDirectional.center,
+      child: Text(
+        PAGE_CONTENTS[pos],
+        style: TextStyle(color: Colors.white, fontSize: TEXT_HUGE_SIZE),
+      ),
+    );
+  }
+
+  Widget _bodyContent() {
+    var list = List<Widget>();
+    for (int i = 0; i < PAGE_CONTENTS.length; i++) {
+      list.add(_childView(i));
+    }
+    return PageView(
+      scrollDirection: direction,
+      children: list,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +66,16 @@ class _PageViewState extends State<PageViewScreen> {
         group: widget.group,
         itemType: ItemType.page_view,
         onClick: widget.onClick,
-        bottomView: null,
+        bottomView: PreferredSize(
+            child: PageSelector(
+              mainColor: Colors.white,
+              clickDirection: _clickDirection,
+            ),
+            preferredSize: Size(0.0, 80)),
       ),
-      body: Text(
-        BOTTOM_TITLES[ItemType.page_view.index],
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        child: _bodyContent(),
       ),
     );
   }

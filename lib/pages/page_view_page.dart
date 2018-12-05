@@ -20,7 +20,12 @@ class PageViewPage extends StatelessWidget implements HasLayoutGroup {
   }
 
   Widget _buildPageView() {
+    var controller = PageController(
+      initialPage: 1,
+    );
     return PageView(
+      scrollDirection: Axis.vertical,
+      controller: controller,
       children: [
         _buildPage(index: 1, color: Colors.green),
         _buildPage(index: 2, color: Colors.blue),
