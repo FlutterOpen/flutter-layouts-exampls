@@ -11,8 +11,8 @@ So far,complete as following:
 > You can learn the layout of Row and Column.
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/row_column.jpg" width="320">
 
-## CrossAxisAlignment
-> Show the describation of the CrossAxisAlignment
+## CrossAxisAlignment   
+> Show the describation of the CrossAxisAlignment    
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/cross_align.jpg" width="320">
 
 ## Stack 
@@ -29,9 +29,15 @@ So far,complete as following:
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/page_view_screen.png" width="320">
 
 ## ListView
-> Support scrolling with Vertical and Horizontal.   
+> Comply scrolling with Vertical and Horizontal.      
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/list_screen_1.png" width="320">   <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/list_screen_2.png" width="320">
-
+## Sliver  
+Comply:
+- SliverGrid
+- SliverFixedExtentList
+- SliverList
+- SliverFillViewport
+<img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/sliver_screen.png" width="320">
 ## MyAccount   
 [nb312](https://github.com/nb312)
 
