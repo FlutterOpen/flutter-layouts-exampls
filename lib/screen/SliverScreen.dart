@@ -6,14 +6,7 @@
 import "package:flutter/material.dart";
 import '../view/app_bar.dart';
 import '../constant/main_const.dart';
-import '../constant/size_const.dart';
 
-const _PAGE_COLORS = [
-  Colors.red,
-  Colors.amber,
-  Colors.deepPurple,
-  Colors.brown,
-];
 const _ITEM_CONTENTS = [
   "SliverGrid",
   "SliverFixedExtentList",
@@ -30,14 +23,9 @@ class SliverScreen extends StatefulWidget {
   _SliverState createState() => _SliverState();
 }
 
-//"SliverGrid",
-//"SliverFixedExtentList",
-//"SliverList",
-//"SliverFillViewport"
-
 class _SliverState extends State<SliverScreen> {
   Widget _buildContent(context, index, int type) {
-    var c =100 * (index % 9);
+    var c = 100 * (index % 9);
     return Container(
       alignment: AlignmentDirectional.center,
       margin: EdgeInsets.symmetric(vertical: 10.0),
