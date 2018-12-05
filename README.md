@@ -6,6 +6,7 @@ So far,complete as following:
 - [Expanded](#expanded)
 - [Padding](#padding)  
 - [Page view](#pageview)
+- [List view](#listview)
 ## RowColumn 
 > You can learn the layout of Row and Column.
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/row_column.jpg" width="320">
@@ -26,6 +27,10 @@ So far,complete as following:
 
 ## PageView 
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/page_view_screen.png" width="320">
+
+## ListView
+> Support scrolling with Vertical and Horizontal.   
+<img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/list_screen_1.png" width="320">   <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/list_screen_2.png" width="320">
 
 ## MyAccount   
 [nb312](https://github.com/nb312)
