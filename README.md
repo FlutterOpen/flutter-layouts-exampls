@@ -1,4 +1,4 @@
-## Just for learn
+## Just for learnning
 This Demo contains contents as follow:
 - [Row&Column ](#rowcolumn)  
 - [CrossAxisAlignment](#crossaxisalignment)
