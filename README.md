@@ -39,6 +39,10 @@ Comply:
 - SliverFillViewport
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/sliver_screen.png" width="320">
 
+## NestListView
+> The child ListView nested in the parent ListView,I comply with two direction and you can change directions.   
+<img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/nest_screen.png" width="320">
+
 ## MyAccount    
 [nb312](https://github.com/nb312)
 
