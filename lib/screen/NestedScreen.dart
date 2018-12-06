@@ -9,7 +9,7 @@ import '../constant/main_const.dart';
 import '../view/nest_selector.dart';
 import '../constant/size_const.dart';
 
-final List<MaterialColor> PARENT_COLORS = [
+final List<MaterialColor> _parentColors = [
   Colors.deepOrange,
   Colors.green,
   Colors.brown,
@@ -57,7 +57,7 @@ class _NestedState extends State<NestedScreen> {
           width: height,
           height: height,
           child: Container(
-            color: PARENT_COLORS[parentIndex % 5][i],
+            color: _parentColors[parentIndex % 5][i],
             margin: EdgeInsets.all(1.0),
             alignment: AlignmentDirectional.center,
             child: Text(
