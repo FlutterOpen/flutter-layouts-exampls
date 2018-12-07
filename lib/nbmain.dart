@@ -17,8 +17,8 @@ class NBMain extends StatefulWidget {
 const ITEM_COUNT = 5;
 
 class NBState extends State<NBMain> {
-  var curGroup = GroupType.simple;
-  var curItemType = ItemType.row_column;
+  var curGroup = GroupType.scroll;
+  var curItemType = ItemType.page_view;
 
   @override
   Widget build(BuildContext context) {
