@@ -1,7 +1,6 @@
 
-## Just for learnning
-### Show some :heart: and star the repo to support the project.Thanks!
-### This Demo contains contents as follow:  
+## Just for learnning:_Show some :heart: and star the repo to support the project.Thanks!_
+### This project contains contents are following:  
 Scrollview |  Sliver | common layout | Other | 
 --- | --- | --- |---  
 Page view |   SliverPersistentHeader| Row,Column,CrossAxisAlignment | InkWell
@@ -20,7 +19,8 @@ GridView | -- | Center |
 
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/stack_screen_2.png" width="200"><img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/expand_screen.png" width="200">  <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/padding_screen.png" width="200">
 
-<img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/flutter_layout.gif" width="320">  
+# GrideView
+ <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/move_grid_view_screen.png" width="220"><img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/move_grid_view_detail_screen.png" width="220"><img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/flutter_layout.gif" width="220">  
 
 
 ## MyAccount    
