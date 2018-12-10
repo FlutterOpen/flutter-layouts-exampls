@@ -8,7 +8,8 @@ import '../view/app_bar.dart';
 import '../constant/main_const.dart';
 import '../view/list_selector.dart';
 import '../constant/size_const.dart';
-
+import 'package:flutter_layout/constant/main_const.dart';
+import 'package:flutter_layout/screen/move/GridViewPage.dart';
 class User {
   User({this.name, this.email});
 
@@ -60,7 +61,6 @@ const USER_EMAILS = [
   "leann.klock@me.com",
   "rhiannon.macfarlane@me.com",
 ];
-const GRID_VIEW = "Grid View";
 
 class ListScreen extends StatefulWidget {
   ListScreen({Key key, this.group, this.onClick}) : super(key: key);
@@ -101,7 +101,9 @@ class _ListState extends State<ListScreen> {
       leading: CircleAvatar(
         child: Text(
           user.name[0],
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
         backgroundColor: BAR_BACK_COLORS[widget.group.index],
       ),
@@ -134,11 +136,26 @@ class _ListState extends State<ListScreen> {
 
   Widget _topRight() {
     return InkWell(
+      onTap: () {
+        print("click");
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>GridViewPage()));
+//        Navigator.of(context).pushNamed(GRID_VIEW_NAME);
+      },
       child: Container(
+        padding: EdgeInsets.only(right: 10.0),
         child: Center(
           child: Text(
-            GRID_VIEW,
-            style: TextStyle(color: Colors.white),
+            GRID_VIEW_NAME,
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+                fontSize: TEXT_NORMAL_SIZE,
+                shadows: [
+                  Shadow(color: Colors.grey[800], offset: Offset(0.0, 1.0))
+                ]),
           ),
         ),
       ),

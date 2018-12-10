@@ -6,6 +6,7 @@
 
 import "package:flutter/material.dart";
 import '../constant/main_const.dart';
+import '../constant/size_const.dart';
 
 const BAR_FONT_SIZE = 21.0;
 const BAR_TITLE_COLOR = Colors.white;
@@ -68,3 +69,38 @@ class SliverBar extends SliverAppBar {
           backgroundColor: BAR_BACK_COLORS[group.index],
         );
 }
+
+
+class MainAppBar extends AppBar {
+  MainAppBar({
+    Key key,
+    this.titleText,
+    this.titleColor = Colors.white,
+    this.rightWidget,
+    this.bottomWidget,
+    this.bottomHeight = 0,
+  }) : super(
+      key: key,
+      title: Text(
+        titleText,
+        style: TextStyle(
+          fontSize: TEXT_LARGE_SIZE,
+          color: Colors.white,
+        ),
+      ),
+      bottom: bottomWidget == null
+          ? null
+          : PreferredSize(
+        child: bottomWidget,
+        preferredSize: Size(0.0, bottomHeight),
+      ),
+      actions: rightWidget == null ? null : [rightWidget],
+      elevation: 1.0);
+
+  final String titleText;
+  final Color titleColor;
+  final Widget rightWidget;
+  final Widget bottomWidget;
+  final double bottomHeight;
+}
+

@@ -62,6 +62,7 @@ enum ItemType {
   hero,
   nested
 }
+const GRID_VIEW_NAME = "GridView";
 
 ItemType convertItemType(index) {
   switch (index) {

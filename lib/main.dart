@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'nbmain.dart';
+import 'package:flutter_layout/constant/main_const.dart';
+import 'package:flutter_layout/screen/move/GridViewPage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -9,12 +11,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter layout',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primaryColor: Colors.grey[900],
       ),
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey,
         body: NBMain(),
       ),
+      routes: {
+        GRID_VIEW_NAME: (context) => GridViewPage(),
+      },
     );
   }
 }
