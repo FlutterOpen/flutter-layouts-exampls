@@ -60,6 +60,7 @@ const USER_EMAILS = [
   "leann.klock@me.com",
   "rhiannon.macfarlane@me.com",
 ];
+const GRID_VIEW = "Grid View";
 
 class ListScreen extends StatefulWidget {
   ListScreen({Key key, this.group, this.onClick}) : super(key: key);
@@ -131,6 +132,19 @@ class _ListState extends State<ListScreen> {
     );
   }
 
+  Widget _topRight() {
+    return InkWell(
+      child: Container(
+        child: Center(
+          child: Text(
+            GRID_VIEW,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,6 +152,7 @@ class _ListState extends State<ListScreen> {
         group: widget.group,
         itemType: ItemType.list,
         onClick: widget.onClick,
+        right: _topRight(),
         bottomView: PreferredSize(
             child: ListSelector(
               mainColor: Colors.white,
