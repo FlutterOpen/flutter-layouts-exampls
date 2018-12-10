@@ -1,5 +1,6 @@
 
-## Just for learnning:_Show some :heart: and star the repo to support the project.Thanks!_
+## Just for learnning
+### Show some :heart: and star the repo to support the project or :smile:[Follow Me](https://github.com/nb312).Thanks!
 ### This project contains contents are following:  
 Scrollview |  Sliver | common layout | Other | 
 --- | --- | --- |---  
