@@ -4,11 +4,11 @@
 ### This project contains contents are following:  
 Scrollview |  Sliver | common layout | Other | 
 --- | --- | --- |---  
-Page view |   SliverPersistentHeader| Row,Column,CrossAxisAlignment | InkWell
+Page view |   SliverPersistentHeader| Row | InkWell
 ListView | SliverGrid | Stack | Shadow
-CustomScrollView | SliverFixedExtentList,SliverList | Expanded,Padding | Image.asset
-Nested ListView |   SliverFillViewport | SizedBox
-GridView | -- | Center | 
+CustomScrollView | SliverFixedExtentList,SliverList | Expanded | Image.asset
+Nested ListView |   SliverFillViewport | SizedBox | Padding
+GridView | CrossAxisAlignment | Center | Column
  
 ## ScrollView     
 <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/nest_screen.png" width="200"> <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/sliver_screen.png" width="200"> <img src="https://github.com/nb312/flutter_layout/blob/master/screenshots/hero_screen.png" width="200">    
